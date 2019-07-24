@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react'
+import { connect } from 'react-redux'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
@@ -87,4 +88,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default connect()(Register)
