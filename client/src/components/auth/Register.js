@@ -1,10 +1,11 @@
 import React, {Fragment, useState} from 'react'
 import { connect } from 'react-redux'
-import axios from 'axios'
 import {Link} from 'react-router-dom'
+// bring setAlert action
+import { setAlert } from '../../actions/alert'
 
 
-const Register = () => {
+const Register = (props) => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -21,7 +22,8 @@ const Register = () => {
     const onSubmit = (e) => {
       e.preventDefault()
       if (password !== password2){
-        console.log('Passwords do not match')
+        // comes from the action 
+        props.setAlert('Passwords do not match', 'danger' )
       } else {
         console.log(formData)
       }
@@ -88,4 +90,4 @@ const Register = () => {
   )
 }
 
-export default connect()(Register)
+export default connect(null, {setAlert})(Register)
