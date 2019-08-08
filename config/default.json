@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://maja:maja@cluster0-cppp8.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientID": "e427b17f21e73221dd32",
+  "githubSecret": "231f75d152e6848d98d4b38276a835d3e2f88b27"
 }
