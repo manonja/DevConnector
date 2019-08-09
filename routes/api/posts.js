@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { check, validationResult } = equire('express-validator/check')
+const { check, validationResult } = require('express-validator/check')
 const auth = require('../../middleware/auth')
 
 // import models 
@@ -26,10 +26,10 @@ router.post('/', [auth, [
     const user = await User.findById(req.user.id).select('-password');
 
     const newPost = new Post({
-      text = req.body.text,
-      name = user.name,
-      avatar = user.avatar,
-      user = req.user.id
+      text: req.body.text,
+      name: user.name,
+      avatar: user.avatar,
+      user: req.user.id
     })
 
     const post = await newPost.save()
